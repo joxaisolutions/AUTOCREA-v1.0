@@ -1,5 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  allowedDevOrigins: [
+    ...(process.env.REPLIT_DEV_DOMAIN
+      ? [`https://${process.env.REPLIT_DEV_DOMAIN}`]
+      : []),
+    ...(process.env.REPLIT_DOMAINS
+      ? process.env.REPLIT_DOMAINS.split(',').map((d) => `https://${d.trim()}`)
+      : []),
+  ],
   images: {
     remotePatterns: [
       {
