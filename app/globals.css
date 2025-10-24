@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #4A90E2;
+  --secondary: #9B59B6;
+  --accent: #00D9FF;
+  --background: #0A0E27;
+  --surface: #1a1f3a;
+  --border: rgba(74, 144, 226, 0.2);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-white via-accent-500 to-primary-500 bg-clip-text text-transparent;
+  }
+  
+  .glassmorphism {
+    @apply backdrop-blur-xl bg-surface/50 border border-primary/20;
+  }
+  
+  .glow {
+    box-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
+  }
+  
+  .glow-accent {
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+  }
+}
